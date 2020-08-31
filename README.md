@@ -53,3 +53,6 @@
  
  ##### Sample response
  ````select * from [OPM_R_10].[dbo].report_index where (ENTITY_ID = '1' and TRADE_DATE < '2020-08-25' and SIDE not in ('3', '4') and PRICE between 120 and 150 and TRADE_QUANTITY <= 500)````
+ 
+ ##### Column schema
+ ![Column Schema](src/main/resources/docs/column_schema.PNG?raw=true "Column Schema")
