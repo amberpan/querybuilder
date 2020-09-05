@@ -1,7 +1,5 @@
 package com.springboot.jooq.model;
 
-import com.springboot.jooq.ColumnSchema;
-
 import java.util.List;
 
 public class FilterContext {

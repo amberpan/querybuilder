@@ -1,4 +1,4 @@
-package com.springboot.jooq;
+package com.springboot.jooq.model;
 
 import java.util.StringJoiner;
 

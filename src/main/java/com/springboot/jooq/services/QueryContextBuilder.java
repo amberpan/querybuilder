@@ -1,6 +1,6 @@
 package com.springboot.jooq.services;
 
-import com.springboot.jooq.ColumnSchema;
+import com.springboot.jooq.model.ColumnSchema;
 import com.springboot.jooq.model.FilterContext;
 import com.springboot.jooq.model.QueryContext;
 import com.springboot.jooq.model.QueryOperator;
@@ -8,6 +8,7 @@ import com.springboot.jooq.model.request.FilterCriteria;
 import com.springboot.jooq.model.request.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class QueryContextBuilder {
             FilterContext filterContext = new FilterContext();
             filterContext.setColumnSchema(dataDictionary.get(f.getFilterName()))
             .setFilterValues(f.getValues().stream()
-                    .map(v->dataConverter.get(filterContext.getColumnSchema().getDataType()).apply(v)).collect(Collectors.toList()))
+                    .map(v->dataConverter.get(filterContext.getColumnSchema().getDataType().toUpperCase()).apply(v)).collect(Collectors.toList()))
             .setQueryOperator(QueryOperator.valueOf(f.getOperator()));
 
             filterContextList.add(filterContext);

@@ -56,3 +56,6 @@
  
  ##### Column schema
  ![Column Schema](src/main/resources/docs/column_schema.PNG?raw=true "Column Schema")
+ 
+ 
+ 
